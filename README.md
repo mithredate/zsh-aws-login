@@ -4,7 +4,7 @@
 
 ## Why
 
-By default, `aws login` keeps the temporary credentials and the refresh token in one fixed directory. Every terminal and every process of your user can then use them. `aws-login` gives each terminal a new directory in `~/.aws`. When the shell that ran `aws-login` exits, the plugin deletes the directory.
+By default, `aws login` keeps the temporary credentials and the refresh token in one fixed directory. Every terminal and every process of your user can then use them. `aws-login` gives each terminal a new directory in `~/.aws`. When the shell that ran `aws-login` exits, the plugin deletes the directory. The plugin also deletes it when you close the terminal window, because the window sends `SIGHUP` to the shell.
 
 A sandbox that hides `~/.aws` also hides the session. An example is the Claude Code sandbox with `~/.aws` in `sandbox.credentials.files`.
 
